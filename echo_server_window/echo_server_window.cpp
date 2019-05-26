@@ -10,6 +10,7 @@
 
 #define BUF_SIZE 1024
 
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	SOCKET socket_svr,socket_clnt;
@@ -17,7 +18,11 @@ int _tmain(int argc, _TCHAR* argv[])
 	SOCKADDR_IN svr_addr, clnt_addr; 
 	char message[BUF_SIZE] = { 0 };
 	int clnt_addrlen;
-	int strLen;
+	int recLen;
+	int N=0; //待计算的数字个数
+	int ret = 0; //返回值
+	int buff;
+
 
 	if(-1==WSAStartup(MAKEWORD(2, 2), &wsaData))
 		printf("func: WSAStartup Error");
@@ -38,6 +43,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		printf("func listen Error");
 
 	clnt_addrlen = sizeof(SOCKADDR);
+	/*
 	for (int  i = 0; i < 5; i++)
 	{
 		socket_clnt = accept(socket_svr, (SOCKADDR *)&clnt_addr, &clnt_addrlen);
@@ -49,10 +55,56 @@ int _tmain(int argc, _TCHAR* argv[])
 		
 		closesocket(socket_clnt);
 	}
+	*/
+
+	socket_clnt = accept(socket_svr, (SOCKADDR *)&clnt_addr, &clnt_addrlen);
+	if (-1 == socket_clnt) printf("func accept Error");
+	else printf("SVR: connetct client\n"); 
+
 	
+	recLen = recv(socket_clnt, message, BUF_SIZE, 0);
+
+	memcpy(&N, &message[0], 1); 
+
+	if (0 == N) send(socket_clnt, (char*)&N, 4, 0);
+
+	switch (message[N * 4 + 1])
+	{
+	case '+':
+		ret =0;
+		break;
+	case '-':
+		memcpy(&buff, &message[1], 4);
+		ret = 2*buff;
+		break;
+	case '*':
+		ret = 1;
+		break;
+	}
+
+	for (int  i = 0; i < N; i++)
+	{
+		memcpy(&buff, &message[i * 4 + 1], 4);
+	//	printf("%d ", buff);
+		switch (message[N*4+1])
+		{
+		case '+':
+			ret += buff;
+			break;
+		case '-':
+			ret -= buff;
+			break;
+		case '*':
+			ret *= buff;
+			break;
+		}
+	}
+
+	send(socket_clnt, (char*)&ret, 4, 0);
+
+	puts("计算结果发送完毕!");
 	closesocket(socket_svr);
-	
 	WSACleanup();
+	system("pause");
 	return 0;
 }
-

@@ -1,0 +1,17 @@
+﻿生成启动时间为 2019/5/26 22:03:45。
+     1>项目“C:\Users\SiNian\Documents\Visual Studio 2013\Projects\TCP-IPTest\char_int_Test\char_int_Test.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\VS2013_install\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\char_int_Test.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt char_int_Test.cpp
+         char_int_Test.cpp
+     1>c:\users\sinian\documents\visual studio 2013\projects\tcp-iptest\char_int_test\char_int_test.cpp(17): warning C4101: “dbuff”: 未引用的局部变量
+     1>c:\users\sinian\documents\visual studio 2013\projects\tcp-iptest\char_int_test\char_int_test.cpp(16): warning C4101: “buff”: 未引用的局部变量
+     1>c:\users\sinian\documents\visual studio 2013\projects\tcp-iptest\char_int_test\char_int_test.cpp(15): warning C4101: “opnd_cnt”: 未引用的局部变量
+       Link:
+         D:\VS2013_install\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\SiNian\Documents\Visual Studio 2013\Projects\TCP-IPTest\Debug\char_int_Test.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\SiNian\Documents\Visual Studio 2013\Projects\TCP-IPTest\Debug\char_int_Test.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\SiNian\Documents\Visual Studio 2013\Projects\TCP-IPTest\Debug\char_int_Test.lib" /MACHINE:X86 Debug\char_int_Test.obj
+         Debug\stdafx.obj
+         char_int_Test.vcxproj -> C:\Users\SiNian\Documents\Visual Studio 2013\Projects\TCP-IPTest\Debug\char_int_Test.exe
+     1>已完成生成项目“C:\Users\SiNian\Documents\Visual Studio 2013\Projects\TCP-IPTest\char_int_Test\char_int_Test.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.47
