@@ -17,7 +17,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	SOCKADDR_IN sockaddr_svr;
 	WSADATA wsaData;
 	char message[BUF_SIZE] = { 0 };
-	int strLen;
+	int sendLen, recvLen, recv_cnt;
 
 	if (-1 == WSAStartup(MAKEWORD(2, 2), &wsaData))
 		printf("func WSAStartup Error");
@@ -42,10 +42,14 @@ int _tmain(int argc, _TCHAR* argv[])
 		if (!strcmp(message, "Q\n") || !strcmp(message, "q\n"))
 			break;
 
-		send(socket_clnt, message, strlen(message), 0);
-		
-		strLen = recv(socket_clnt, message, BUF_SIZE - 1, 0);
-		message[strLen] = 0;
+		sendLen=send(socket_clnt, message, strlen(message), 0);
+		recvLen = 0;
+		while (recvLen < sendLen){
+			recv_cnt = recv(socket_clnt, message, BUF_SIZE - 1, 0);
+			if (-1 == recv_cnt) printf("func recv Error");
+			recvLen += recv_cnt;
+		}
+		message[recvLen] = 0;
 		printf("Message froom svr: %s\n", message);
 	}
 

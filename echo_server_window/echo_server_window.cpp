@@ -49,7 +49,7 @@ int _tmain(int argc, _TCHAR* argv[])
 		
 		closesocket(socket_clnt);
 	}
-
+	
 	closesocket(socket_svr);
 	
 	WSACleanup();
