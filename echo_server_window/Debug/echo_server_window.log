@@ -1,0 +1,14 @@
+﻿生成启动时间为 2019/5/26 18:33:23。
+     1>项目“C:\Users\SiNian\documents\visual studio 2013\Projects\TCP-IPTest\echo_server_window\echo_server_window.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\VS2013_install\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\echo_server_window.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt echo_server_window.cpp
+         echo_server_window.cpp
+       Link:
+         D:\VS2013_install\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\SiNian\documents\visual studio 2013\Projects\TCP-IPTest\Debug\echo_server_window.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\SiNian\documents\visual studio 2013\Projects\TCP-IPTest\Debug\echo_server_window.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\SiNian\documents\visual studio 2013\Projects\TCP-IPTest\Debug\echo_server_window.lib" /MACHINE:X86 Debug\echo_server_window.obj
+         Debug\stdafx.obj
+         echo_server_window.vcxproj -> C:\Users\SiNian\documents\visual studio 2013\Projects\TCP-IPTest\Debug\echo_server_window.exe
+     1>已完成生成项目“C:\Users\SiNian\documents\visual studio 2013\Projects\TCP-IPTest\echo_server_window\echo_server_window.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.61
